@@ -22,7 +22,7 @@ export default class extends Module {
 				};
 			} else {
 				return {
-					reaction: msg.friend.love >= 0 ? 'hmm' : null
+					reaction: msg.friend.love >= 0 ? 'hmm' : null ,
           reply('あなたにはこのコマンドの発行権限がありません！');
 				};
 			}

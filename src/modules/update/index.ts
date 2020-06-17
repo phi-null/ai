@@ -15,7 +15,7 @@ export default class extends Module {
 	@autobind
 	private async mentionHook(msg: Message) {
 		if (msg.text && msg.includes(['アプデ', 'アップデート', 'update']) && msg.includes(['みすきー', 'ミスキー', 'misskey'])) {
-			if (msg.user.host == 'misskey.void.gift' && msg.user.username == 'phi') {
+			if (msg.user.host == null && msg.user.username == 'phi') {
 				return {
 					reaction: msg.friend.love >= 0 ? 'like' : null
 				};

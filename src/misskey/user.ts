@@ -5,4 +5,5 @@ export type User = {
 	host: string;
 	isFollowing: boolean;
 	isBot: boolean;
+	isAdmin: boolean;
 };

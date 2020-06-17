@@ -17,13 +17,11 @@ export default class extends Module {
 		if (msg.text && msg.includes(['アプデ', 'アップデート', 'update']) && msg.includes(['みすきー', 'ミスキー', 'misskey'])) {
 			if (msg.user.host == 'misskey.void.gift' && msg.user.isAdmin) {
 				return {
-					reaction: msg.friend.love >= 0 ? 'like' : null ,
-          reply('アップデート実行します！');
+					reaction: msg.friend.love >= 0 ? 'like' : null
 				};
 			} else {
 				return {
-					reaction: msg.friend.love >= 0 ? 'hmm' : null ,
-          reply('あなたにはこのコマンドの発行権限がありません！');
+					reaction: msg.friend.love >= 0 ? 'hmm' : null 
 				};
 			}
 		} else {

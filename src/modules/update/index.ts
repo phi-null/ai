@@ -18,7 +18,7 @@ export default class extends Module {
 	private async mentionHook(msg: Message) {
 		if (msg.text && msg.includes(['アプデ', 'アップデート', 'update']) && msg.includes(['みすきー', 'ミスキー', 'misskey'])) {
 			if (msg.user.host == null && msg.user.isAdmin) {
-        exec('echo hello' , (err , stdout, stderr) =>{
+        exec('pwd' , (err , stdout, stderr) =>{
           if(err){console.log(err);}
           console.log(stdout);
         })

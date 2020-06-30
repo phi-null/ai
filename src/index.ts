@@ -72,7 +72,7 @@ promiseRetry(retry => {
 		new BirthdayModule(),
 		new ValentineModule(),
 		new KeywordModule(),
-		new MazeModule(),
+		// new MazeModule(),
 		new ChartModule(),
 		new UpdateModule(),
 	]);

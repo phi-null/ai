@@ -121,6 +121,7 @@ export default class 藍 {
 		const subStream = this.connection.useSharedConnection('localTimeline');
 
 		subStream.on('note' , async data => {
+			this.log('Catch Anything');
 			if (data.userId == this.account.id) return; // 自分は弾く
 			if (data.text && data.text.includes(['ねこてー！', 'nekote-!'])){
 				this.api('notes/reactions/create', {

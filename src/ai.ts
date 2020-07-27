@@ -123,14 +123,14 @@ export default class 藍 {
 		subStream.on('note' , async data => {
 			this.log('Catch Anything');
 			if (data.userId == this.account.id) return; // 自分は弾く
-			if (data.text && data.text.includes(['nekote-!'])){
+			if (data.text && data.text.includes(['ねこてー！','nekote-!'])){
 				this.api('notes/reactions/create', {
 					noteId: data.id,
 					reaction: 'love'
 				});
 				this.api('notes/create',{
 					"visibility": "followers",
-					"text": "phi！",
+					"text": "ふぁーい！",
 					"viaMobile": false,
 					"localOnly": true,
 					"noExtractMentions": true,

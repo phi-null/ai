@@ -121,9 +121,6 @@ export default class 藍 {
 		const subStream = this.connection.connectToChannel('homeTimeline');
 
 		subStream.on('note' , async data => {
-			this.log('Catch Anything');
-			this.log("ねこてー！")
-			this.log(data.text);
 			if (data.userId == this.account.id) return; // 自分は弾く
 			if (data.text && data.text.includes(["ねこてー！"])){
 				this.log('I see');

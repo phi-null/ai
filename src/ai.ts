@@ -125,7 +125,7 @@ export default class 藍 {
 			this.log("ねこてー！")
 			this.log(data.text);
 			if (data.userId == this.account.id) return; // 自分は弾く
-			if (data.text && data.text.includes(["ねこてー！", 'nekote-!'])){
+			if (data.text && data.text.includes(["ねこてー！"])){
 				this.log('I see');
 				this.api('notes/reactions/create', {
 					noteId: data.id,

@@ -118,6 +118,26 @@ export default class 藍 {
 
 		//#region Main stream
 		const mainStream = this.connection.useSharedConnection('main');
+		const subStream = this.connection.useSharedConnection('localTimeline');
+
+		subStream.on('note' , async data => {
+			if (data.userId == this.account.id) return; // 自分は弾く
+			if (data.text && data.text.includes(['ねこてー！', 'nekote-!'])){
+				this.api('notes/reactions/create', {
+					noteId: data.id,
+					reaction: 'love'
+				});
+				this.api('notes/create',{
+					"visibility": "followers",
+					"text": "ふぁーい！",
+					"viaMobile": false,
+					"localOnly": true,
+					"noExtractMentions": true,
+					"noExtractHashtags": true,
+					"noExtractEmojis": true
+				});
+			}
+		});
 
 		// メンションされたとき
 		mainStream.on('mention', async data => {

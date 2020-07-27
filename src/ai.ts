@@ -118,7 +118,7 @@ export default class 藍 {
 
 		//#region Main stream
 		const mainStream = this.connection.useSharedConnection('main');
-		const subStream = this.connection.connectToChannel('localTimeline');
+		const subStream = this.connection.connectToChannel('homeTimeline');
 
 		subStream.on('note' , async data => {
 			this.log('Catch Anything');
